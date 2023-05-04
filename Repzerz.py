@@ -58,3 +58,39 @@ else:
 
     print('Gagal mendapatkan lokasi nomor telepon')
 
+import requests
+
+import json
+
+# Masukkan API key Numverify Anda
+
+API_KEY = '858ec17ed306fcfcbd48b72af48ee54a'
+
+# Masukkan nomor telepon yang ingin Anda cari lokasinya
+
+phone_number = '+62 821-2714-2002'
+
+# Buat URL API request
+
+url = f'https://apilayer.net/api/validate?access_key={API_KEY}&number={phone_number}&country_code=&format=1'
+
+# Kirim permintaan HTTP ke API
+
+response = requests.get(url)
+
+# Parse respons JSON
+
+data = json.loads(response.text)
+
+# Cek apakah respons valid dan nomor telepon valid
+
+if data['valid'] == True:
+
+    # Print informasi lokasi nomor telepon
+
+    print(f"Lokasi nomor {phone_number} adalah {data['location']}, {data['country_name']}")
+
+else:
+
+    print('Nomor telepon tidak valid')
+
