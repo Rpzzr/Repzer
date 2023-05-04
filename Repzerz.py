@@ -4,7 +4,7 @@ import json
 
 # Masukkan API key OpenCelliD Anda
 
-API_KEY = 'e7862eac97b65ef9cafb030afd480df2'
+API_KEY = '858ec17ed306fcfcbd48b72af48ee54a'
 
 # Masukkan nomor telepon yang ingin Anda cari lokasinya
 
